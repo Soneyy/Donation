@@ -7,10 +7,47 @@ const expressLayouts = require("express-ejs-layouts");
 const methodOverride = require("method-override");
 const homeRoutes = require("./routes/home.js");
 const authRoutes = require("./routes/auth.js");
-//const adminRoutes = require("./routes/admin.js");
+const adminRoutes = require("./routes/admin.js");
 const donorRoutes = require("./routes/donor.js");
-//const agentRoutes = require("./routes/agent.js");
+const agentRoutes = require("./routes/agent.js");
+const bodyParser = require('body-parser');
+const nodemailer = require('nodemailer');
 
+app.set('view engine', 'ejs');
+app.use(bodyParser.urlencoded({ extended: true }));
+
+app.get('/contact', (req, res) => {
+  res.render('contact');
+});
+app.post('/contact', (req, res) => {
+	const { name, email, message } = req.body;
+  
+	// Send email using Nodemailer
+	const transporter = nodemailer.createTransport({
+	  service: 'gmail',
+	  auth: {
+		user: "sherpasoni59@gmail.com",
+        pass: "sqipreiwrqpdtldh",
+	  },
+	});
+  
+	const mailOptions = {
+	  from: email,
+	  to: 'sherpasoni59@gmail.com',
+	  subject: 'New message from contact form',
+	  text: `${name} (${email}) says: ${message}`,
+	};
+  
+	transporter.sendMail(mailOptions, (error, info) => {
+	  if (error) {
+		console.log(error);
+		res.send('Error sending message. Please try again later.');
+	  } else {
+		console.log('Email sent: ' + info.response);
+		res.send('Message sent successfully!');
+	  }
+	});
+  });
 
 require("dotenv").config();
 // require("./config/dbConnection.js")();
@@ -48,8 +85,10 @@ app.use((req, res, next) => {
 app.use(homeRoutes);
 app.use(authRoutes);
 app.use(donorRoutes);
-// app.use(adminRoutes);
-// app.use(agentRoutes);
+app.use(adminRoutes);
+app.use(agentRoutes);
+
+  
 
 
 app.use((req,res) => {
