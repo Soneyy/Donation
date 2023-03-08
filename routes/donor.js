@@ -21,6 +21,7 @@ router.get("/donor/donate", middleware.ensureDonorLoggedIn, (req,res) => {
 	res.render("donor/donate", { title: "Donate" });
 });
 
+
 router.post("/donor/donate", middleware.ensureDonorLoggedIn, async (req,res) => {
 	try
 	{
@@ -103,6 +104,8 @@ router.put("/donor/profile", middleware.ensureDonorLoggedIn, async (req,res) => 
 		req.flash("error", "Some error occurred on the server.")
 		res.redirect("back");
 	}
+
+	
 	
 });
 
