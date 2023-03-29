@@ -1,0 +1,65 @@
+<aside id="sidebar" class="sidebar">
+
+    <ul class="sidebar-nav" id="sidebar-nav">
+
+        <li class="nav-item">
+            <a class="nav-link collapsed" href="/admin/dashboard">
+                <i class="bi bi-grid"></i>
+                <span>Dashboard</span>
+            </a>
+        </li><!-- End Dashboard Nav -->
+
+        <li class="nav-item">
+            <a class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse" href="#">
+                <i class="bi bi-menu-button-wide"></i><span>Donations</span><i class="bi bi-chevron-down ms-auto"></i>
+            </a>
+            <ul id="components-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+                <li>
+                    <a href="/admin/donations/pending">Pending Donations</a>
+                    <a href="/admin/donations/previous">Previous Donations</a>
+                </li>
+
+            </ul>
+        </li><!-- End Components Nav -->
+        <li class="nav-item">
+            <a class="nav-link collapsed" href="/admin/money-donations">
+                <i class="bi bi-cash-stack"></i> Money Donations
+            </a>
+        </li>
+
+        <li class="nav-item">
+            <a class="nav-link collapsed" href="/admin/agents">
+                <i class="bi bi-person-fill"></i> Agents</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link collapsed" href="/admin/volunteer">
+                <i class="bi bi-person-fill"></i> Volunteer</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link collapsed" href="/admin/show-opportunity">
+                <i class="bi bi-book"></i> Show Opportunity </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link collapsed" href="/admin/profile">
+                <i class="bi bi-eye-fill"></i> My Profile</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link collapsed" data-bs-target="#components-banner" data-bs-toggle="collapse" href="#">
+                <i class="bi bi-menu-button-wide"></i><span>Banner</span><i class="bi bi-chevron-down ms-auto"></i>
+            </a>
+            <ul id="components-banner" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+                <li>
+                    <a href="/admin/add-banner">Add Banner</a>
+                    <a href="/admin/show-banner">Show Banner</a>
+                </li>
+
+            </ul>
+        </li><!-- End Components Nav -->
+        <li class="nav-item">
+            <a href="/auth/logout" class="nav-link collapsed">
+                <i class="bi bi-file-earmark-lock-fill"></i> Logout</a>
+        </li>
+
+    </ul>
+
+</aside><!-- End Sidebar-->

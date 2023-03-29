@@ -1,0 +1,56 @@
+<%- include('../partials/header') %>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12 mt-5 mb-5">
+            <h1>Contact Us</h1>
+        </div>
+        <div class="col-md-4">
+            <p>If you have any questions, comments or suggestions, please fill out the form above.</p>
+            <p>You can also call us at <a href="tel:+9779823118986">+9823118986</a> or visit us at our office located at
+                maitighar, NEPAL.</p>
+            <p>Our office hours are Monday through Friday from 9am to 5pm.</p>
+            <p>Thank you for your interest in our company.</p>
+            <hr>
+            <p>Connect with us on social media:</p>
+            <ul style="display: flex;list-style-type: none;">
+                <li>
+                    <a href="https://www.facebook.com/" target="_blank" class="social-link facebook">
+                        <i class="fab fa-facebook"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.instagram.com/" target="_blank" class="social-link instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.youtube.com/" target="_blank" class="social-link youtube">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="col-md-8">
+            <form action="/contact" method="POST">
+                <div class="form-group mb-3">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" class="form-control" name="name" required>
+                </div>
+                <div class="form-group mb-3">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" class="form-control" name="email" required>
+                </div>
+                <div class="form-group mb-3">
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" class="form-control" required></textarea>
+                </div>
+                <div class="form-group mb-3">
+                    <button class="btn btn-success">Send Message</button>
+                </div>
+            </form>
+
+        </div>
+    </div>
+</div>
+
+<%- include('../partials/footer') %>

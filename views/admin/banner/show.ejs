@@ -1,0 +1,36 @@
+<%- include('../../partials/admin/adminHeader') %>
+<%- include('../../partials/admin/adminAside') %>
+<main id="main" class="main">
+    <div class="bg-white shadow-sm p-3">
+        <span class="me-3" id="sidebar-toggler-btn"><i class="fas fa-bars"></i></span>
+        <h5 class="m-0 color-theme d-inline-block">Show Banner</h5>
+    </div>
+    <div class="row">
+        <div class="col-md-12 mt-5">
+            <table class="table">
+                <thead>
+                <tr>
+                    <th>S.n</th>
+                    <th>Title</th>
+                    <th>Image</th>
+                    <th>Action</th>
+                </tr>
+                </thead>
+                <tbody>
+                <% for(let i = 0; i < bannerData.length; i++) { %>
+                    <tr>
+                        <th scope="row"> <%= i + 1 %> </th>
+                        <td> <%= bannerData[i].title %> </td>
+                        <td>
+                            <img src="/assets/banner/<%= bannerData[i].image %>" width="30" alt="not found">
+                        </td>
+                        <td></td>
+                    </tr>
+                <% } %>
+
+                </tbody>
+
+            </table>
+        </div>
+    </div>
+</main>

@@ -1,0 +1,38 @@
+<%- include('../partials/admin/adminHeader') %>
+<%- include('../partials/admin/adminAside') %>
+
+<main id="main" class="main">
+
+    <div class="bg-white shadow-sm p-3">
+        <span class="me-3" id="sidebar-toggler-btn"><i class="fas fa-bars"></i></span>
+        <h5 class="m-0 color-theme d-inline-block">Volunteer list</h5>
+    </div>
+
+    <div class="col-md-12 mt-4">
+        <table class="table table-hover">
+            <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Volunteer name</th>
+                <th scope="col">Email</th>
+                <th scope="col">Phone</th>
+                <th scope="col">Joined time</th>
+            </tr>
+            </thead>
+            <tbody>
+            <% for(let i = 0; i < volunteer.length; i++) { %>
+            <tr>
+                <th scope="row"> <%= i + 1 %> </th>
+                <td> <%= volunteer[i].firstName + " " + volunteer[i].lastName %> </td>
+                <td> <%= volunteer[i].email %> </td>
+                <td> <%= volunteer[i].phone %> </td>
+                <td> <%= volunteer[i].joinedTime.toLocaleString("en-IN", {
+                        dateStyle: "medium",
+                        timeStyle: "short"
+                    }) %> </td>
+                <% } %>
+            </tbody>
+        </table>
+    </div>
+
+</main>
