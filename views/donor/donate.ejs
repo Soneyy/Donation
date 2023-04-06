@@ -1,7 +1,7 @@
-<main>
-	<%- include('../partials/donorSidebar') %>
-	
-	<div id="main-wrapper">
+<%- include('../partials/donor/donorHeader') %>
+<%- include('../partials/donor/donorAside') %>
+
+<main id="main" class="main">
 		<div class="bg-white shadow-sm p-3">
 			<span class="me-3" id="sidebar-toggler-btn"><i class="fas fa-bars"></i></span>
 			<h5 class="m-0 color-theme d-inline-block">Donate</h5>
@@ -21,7 +21,7 @@
 				
 				<div class="mb-4 col-sm-6">
 					<label for="time" class="form-label">Time of cooking</label>
-					<input type="datetime-local" name="donation[cookingTime]" class="form-date-input" id="time" required>
+					<input type="datetime-local" name="donation[cookingTime]" class="form-control" id="time" required>
 				</div>
 			</div>
 			
@@ -42,10 +42,8 @@
 				<textarea type="text" name="donation[donorToAdminMsg]" class="form-control" id="msg" placeholder="You can write here some msg.."></textarea>
 			</div>
 			
-			<button type="submit" class="btn w-75 d-block m-auto mt-4">Submit</button>
+			<button type="submit" class="btn btn-success w-75 d-block m-auto mt-4">Submit</button>
 		</form>
-		
-	</div>
 </main>
 
 <script>

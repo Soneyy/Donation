@@ -1,0 +1,84 @@
+<%- include('../partials/volunteer/volunteerAside') %>
+<%- include('../partials/volunteer/volunteerHeader') %>
+
+<main id="main" class="main">
+        <div class="bg-white shadow-sm p-3">
+            <span class="me-3" id="sidebar-toggler-btn"><i class="fas fa-bars"></i></span>
+            <h5 class="m-0 color-theme d-inline-block">Opportunity</h5>
+        </div>
+
+        <form action="/volunteer/opportunity" method="POST" class="border m-4 my-3 p-4 bg-white rounded-2 shadow">
+            <div class="form-group mb-3">
+                <label for="organization" class="form-label">organization</label>
+                <input type="text" name="organization"
+                       class="form-control" id="organization"
+                       placeholder="organization name" required>
+            </div>
+            <div class="form-group mb-3">
+                <label for="title" class="form-label">title</label>
+                <input type="text" name="title"
+                       class="form-control" id="title"
+                       placeholder="title name" required>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group mb-3">
+                        <label for="phone" class="form-label">Phone</label>
+                        <input type="number" name="phone" class="form-control" id="phone"
+                               placeholder="Enter phone.." required>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group mb-3">
+                        <label for="location" class="form-label">Location</label>
+                        <input type="text" name="location" class="form-control" id="location"
+                               placeholder="Enter location.." required>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group mb-3">
+                        <label for="start_date" class="form-label">Start Date</label>
+                        <input type="date" name="startDate" class="form-control" id="start_date"
+                               required>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group mb-3">
+                        <label for="endDate" class="form-label">End Date</label>
+                        <input type="date" name="endDate" class="form-control"
+                               id="endDate"
+                               required>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group mb-3">
+                        <label for="area_of_interest" class="form-label">area of interest</label>
+                        <input type="text" name="area_of_interest" class="form-control"
+                               id="area_of_interest">
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group mb-3">
+                        <label for="skills" class="form-label">Skills</label>
+                        <input type="text" name="skills" class="form-control"
+                               id="skills">
+                    </div>
+                </div>
+
+            </div>
+            <div class="form-group mb-3">
+                <label for="experience" class="form-label">experience</label>
+                <input type="text" name="experience" class="form-control"
+                       id="experience">
+            </div>
+
+            <div class="form-group mb-3">
+                <label for="description" class="form-label">Description</label>
+                <textarea name="description" class="form-control" id="description"></textarea>
+            </div>
+            <div class="form-group">
+                <button type="submit" class="btn btn-success w-75 d-block mt-4">Apply</button>
+            </div>
+        </form>
+
+</main>

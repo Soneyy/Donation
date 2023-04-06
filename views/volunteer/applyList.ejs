@@ -1,0 +1,39 @@
+<%- include('../partials/volunteer/volunteerAside') %>
+<%- include('../partials/volunteer/volunteerHeader') %>
+
+<main id="main" class="main">
+
+        <div class="bg-white shadow-sm p-3">
+            <span class="me-3" id="sidebar-toggler-btn"><i class="fas fa-bars"></i></span>
+            <h5 class="m-0 color-theme d-inline-block">Apply List</h5>
+        </div>
+
+        <div class="col-md-12 mt-3">
+            <table class="table table-hover">
+                <thead>
+                <tr>
+                    <th scope="col">S.n</th>
+                    <th scope="col">organization</th>
+                    <th scope="col">title</th>
+                    <th scope="col">location</th>
+                    <th scope="col">startDate</th>
+                    <th scope="col">endDate</th>
+                    <th scope="col">Status</th>
+                </tr>
+                </thead>
+                <tbody>
+                <% for(let i = 0; i < opportunities.length; i++) { %>
+                    <tr>
+                        <th scope="row"> <%= i + 1 %> </th>
+                        <td> <%= opportunities[i].organization %> </td>
+                        <td> <%= opportunities[i].title %> </td>
+                        <td> <%= opportunities[i].location %> </td>
+                        <td> <%= opportunities[i].startDate %> </td>
+                        <td> <%= opportunities[i].endDate %> </td>
+                        <td> <%= opportunities[i].status %> </td>
+                    </tr>
+                <% } %>
+                </tbody>
+            </table>
+        </div>
+</main>
