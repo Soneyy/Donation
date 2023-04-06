@@ -1,0 +1,46 @@
+<%- include('../partials/admin/adminHeader') %>
+<%- include('../partials/admin/adminAside') %>
+
+<main id="main" class="main">
+    <div class="bg-white shadow-sm p-3">
+        <span class="me-3" id="sidebar-toggler-btn"><i class="fas fa-bars"></i></span>
+        <h5 class="m-0 color-theme d-inline-block">Money Donations</h5>
+    </div>
+
+    <div class="col-md-12 mt-3">
+        <table class="table table-hover">
+            <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Donor name</th>
+                <th scope="col">Email</th>
+                <th scope="col">Phone</th>
+                <th scope="col">Amount</th>
+                <th scope="col">Status</th>
+                <th scope="col">Actions</th>
+            </tr>
+            </thead>
+            <tbody>
+            <% for(let i = 0; i < moneyDonateData.length; i++) { %>
+                <tr>
+                    <th scope="row"> <%= i + 1 %> </th>
+                    <td> <%= moneyDonateData[i].name %> </td>
+                    <td> <%= moneyDonateData[i].email %> </td>
+                    <td> <%= moneyDonateData[i].phone %> </td>
+                    <td> <%= moneyDonateData[i].amount %> </td>
+                    <td> <%= moneyDonateData[i].status %> </td>
+                    <td>
+                        <% if(moneyDonateData[i].status == "pending") { %>
+                            <form action="" method="post">
+                                <input type="hidden" name="criteria" value="<%= moneyDonateData[i]._id%>">
+                                <button name="accept" class="btn btn-success">Accept</button>
+                                <button name="rejected" class="btn btn-danger">Rejected</button>
+                            </form>
+                        <% } %>
+                    </td>
+                </tr>
+            <% } %>
+            </tbody>
+        </table>
+    </div>
+</main>

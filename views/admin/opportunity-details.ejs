@@ -1,0 +1,89 @@
+<%- include('../partials/admin/adminHeader') %>
+<%- include('../partials/admin/adminAside') %>
+
+<main id="main" class="main">
+
+    <div class="bg-white shadow-sm p-3">
+        <span class="me-3" id="sidebar-toggler-btn"><i class="fas fa-bars"></i></span>
+        <h5 class="m-0 color-theme d-inline-block">Volunteer Details</h5>
+    </div>
+    <div class="container mb-5">
+        <div class="col-md-12 mb-4">
+            <table class="table table-hover">
+                <tr>
+                    <th width="15%">First Name</th>
+                    <td><%= opportunityData.volunteer.firstName %></td>
+                </tr>
+                <tr>
+                    <th width="15%">Last Name</th>
+                    <td><%= opportunityData.volunteer.lastName %></td>
+                </tr>
+                <tr>
+                    <th width="15%">Email</th>
+                    <td><%= opportunityData.volunteer.email %></td>
+                </tr>
+                <tr>
+                    <th width="15%">Phone</th>
+                    <td><%= opportunityData.phone %></td>
+                </tr>
+                <tr>
+                    <th width="15%">organization</th>
+                    <td><%= opportunityData.organization %></td>
+                </tr>
+                <tr>
+                    <th width="15%">title</th>
+                    <td><%= opportunityData.title %></td>
+                </tr>
+                <tr>
+                    <th width="15%">area of interest</th>
+                    <td><%= opportunityData.area_of_interest %></td>
+                </tr>
+                <tr>
+                    <th width="15%">skills</th>
+                    <td><%= opportunityData.skills %></td>
+                </tr>
+                <tr>
+                    <th width="15%">experience</th>
+                    <td><%= opportunityData.experience %></td>
+                </tr>
+                <tr>
+                    <th width="15%">description</th>
+                    <td><%= opportunityData.description %></td>
+                </tr>
+                <tr>
+                    <th width="15%">start Date</th>
+                    <td><%= opportunityData.startDate %></td>
+                </tr>
+                <tr>
+                    <th width="15%">end Date</th>
+                    <td><%= opportunityData.endDate %></td>
+                </tr>
+                <tr>
+                    <th width="15%">Status</th>
+                    <td>
+                        <% if(opportunityData.status == "pending") { %>
+                            <span class="badge bg-warning text-dark">Pending</span>
+                        <% } else if(opportunityData.status == "accepted") { %>
+                            <span class="badge bg-success">Approved</span>
+                        <% } else if(opportunityData.status == "rejected") { %>
+                            <span class="badge bg-danger">Rejected</span>
+                        <% } %>
+                    </td>
+                </tr>
+                <tr>
+                    <th></th>
+                    <td>
+                        <% if(opportunityData.status == "pending") { %>
+                            <form action="" method="post">
+                                <button name="accept" class="btn btn-success">Accept</button>
+                                <button name="rejected" class="btn btn-danger">Rejected</button>
+                            </form>
+                        <% } %>
+                    </td>
+                </tr>
+
+            </table>
+        </div>
+    </div>
+
+</main>
